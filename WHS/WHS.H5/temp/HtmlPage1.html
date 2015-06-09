@@ -1,0 +1,114 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        #div1 {
+            position: relative;
+            height: 200px;
+            width: 200px;
+            margin: 100px;
+            padding: 10px;
+            border: 1px solid black;
+        }
+
+        #div2 {
+            padding: 50px;
+            position: absolute;
+            border: 1px solid black;
+            background-color: yellow;
+            transform: rotate(45deg);
+            transform-origin: 20% 40%;
+            -ms-transform: rotate(45deg); /* IE 9 */
+            -ms-transform-origin: 20% 40%; /* IE 9 */
+            -webkit-transform: rotate(45deg); /* Safari and Chrome */
+            -webkit-transform-origin: 10% 40%; /* Safari and Chrome */
+            -moz-transform: rotate(45deg); /* Firefox */
+            -moz-transform-origin: 20% 40%; /* Firefox */
+            -o-transform: rotate(45deg); /* Opera */
+            -o-transform-origin: 20% 40%; /* Opera */
+        }
+
+        #div3 {
+            padding: 50px;
+            position: absolute;
+            border: 1px solid black;
+            background-color: yellow;
+        }
+
+        .sl-slide-horizontal .sl-content-slice {
+            width: 100%;
+            height: 50%;
+            left: -200px;
+            -webkit-transform: translateY(0%) scale(1);
+            -moz-transform: translateY(0%) scale(1);
+            -o-transform: translateY(0%) scale(1);
+            -ms-transform: translateY(0%) scale(1);
+            transform: translateY(0%) scale(1);
+        }
+
+        .gesture {
+            width: 20px;
+            height: 20px;
+            z-index: 1000;
+            -webkit-animation: bounceIn 1.5s ease-in-out;
+            -moz-animation: bounceIn 1.5s ease-in-out;
+            animation: bounceIn 1.5s ease-in-out;
+        }
+
+        .bounceIn {
+           -webkit-animation: bounceIn 1.5s ease-in-out;
+            -moz-animation: bounceIn 1.5s ease-in-out;
+            animation: bounceIn 1.5s ease-in-out;
+        }
+
+        @-webkit-keyframes bounceIn {
+            0%, 20%, 40%, 60%, 80%, 100% {
+                -webkit-transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+                transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+            }
+
+            0% {
+                opacity: 0;
+                -webkit-transform: scale3d(.3, .3, .3);
+                transform: scale3d(.3, .3, .3);
+            }
+
+            20% {
+                -webkit-transform: scale3d(1.1, 1.1, 1.1);
+                transform: scale3d(1.1, 1.1, 1.1);
+            }
+
+            40% {
+                -webkit-transform: scale3d(.9, .9, .9);
+                transform: scale3d(.9, .9, .9);
+            }
+
+            60% {
+                opacity: 1;
+                -webkit-transform: scale3d(1.03, 1.03, 1.03);
+                transform: scale3d(1.03, 1.03, 1.03);
+            }
+
+            80% {
+                -webkit-transform: scale3d(.97, .97, .97);
+                transform: scale3d(.97, .97, .97);
+            }
+
+            100% {
+                opacity: 1;
+                -webkit-transform: scale3d(1, 1, 1);
+                transform: scale3d(1, 1, 1);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="div1">
+        <div id="div2">HELLO</div>
+        <div id="div3" class="bounceIn">HELLO</div>
+    </div>
+
+</body>
+</html>

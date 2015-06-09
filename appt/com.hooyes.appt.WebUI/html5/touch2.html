@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" />
+    <title>HTML5测试</title>
+    <script src="/Content/JS/jquery-1.10.2.min.js" type="text/javascript"></script>
+    <script src="http://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            var startX, startY, endX, endY;
+            var showADID = 1;
+            document.getElementById("divADBox").addEventListener("touchstart", touchStart, false);
+            document.getElementById("divADBox").addEventListener("touchmove", touchMove, false);
+            document.getElementById("divADBox").addEventListener("touchend", touchEnd, false);
+            function touchStart(event) {
+                var touch = event.touches[0];
+                startY = touch.pageY;
+                startX = touch.pageX;
+            }
+            function touchMove(event) {
+                var touch = event.touches[0];
+                //endY = (startY - touch.pageY);
+                endX = touch.pageX;
+            }
+            function touchEnd(event) {
+                $("#img0" + showADID).hide();
+                showADID++;
+                if (showADID > 4) {
+                    showADID = 1;
+                }
+                if ((startX - endX) > 100) {
+                    $("#img0" + showADID).show();
+                }
+                $("#spText").html("X轴移动大小：" + (startX - endX));
+            }
+        })
+    </script>
+</head>
+<body >
+    <form id="form1">
+     <span id="spText">X轴移动大小：0</span>
+    <div style="border:solid 1px Red;" id="divADBox">
+   
+        <img id="img01" src="http://appt.s.hooyes.com/Demos/hooyes_demo4/0.JPG"  />
+        <img id="img02" src="/Content/Images/2.gif" style="display:none;" />
+        <img id="img03" src="/Content/Images/3.gif" style="display:none;" />
+        <img id="img04" src="/Content/Images/4.gif" style="display:none;" />
+    </div>
+    </form>
+</body>
+</html>
