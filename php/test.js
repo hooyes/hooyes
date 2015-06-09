@@ -1,1 +1,0 @@
-var d={name:'hooyes',age:'18'}
