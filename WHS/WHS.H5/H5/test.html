@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script src="../js/jquery-1.8.2.min.js"></script>
+</head>
+<body>
+    <input type="text" value="true" id="k_is_smoker" />
+    <input type="text" value="false" id="k_is_xxxx" />
+    <script>
+        var pattern = /\$([A-Za-z0-9_])+/ig;
+        var Condition = '$k_is_smoker==\u0027true\u0027&&$k_is_xxxx==\u0027false\u0027';
+        function r_getValue(k) {
+            k = k.replace("$", "");
+            return "'" + $("#" + k).val() + "'";
+        }
+        var r = Condition.replace(pattern, r_getValue);
+        document.write(r);
+        alert(eval(r));
+    </script>
+</body>
+</html>
