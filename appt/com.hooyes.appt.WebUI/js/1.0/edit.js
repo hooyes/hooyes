@@ -1,7 +1,7 @@
 /// <reference path="jquery-1.8.2.min.js" />
 // Author: hooyes
 // Date: 2015-06-10
-// Version: 1.1
+// Version: 1.0
 
 var OS;
 
@@ -24,7 +24,7 @@ function connectWebViewJavascriptBridge(callback) {
 $(function () {
  
   if(OS=='android'){
-    $("body").append("<script src='"+JS_CDN+"/js/jsb.js'></script>");
+    //$("body").append("<script src='"+JS_CDN+"/js/jsb.js'></script>");
   }
   else if(OS == "ios"){
   connectWebViewJavascriptBridge(function (bridge) {
@@ -36,43 +36,28 @@ $(function () {
   }
   
   if(EditMode=='1'){
-    
-    $('.app-edit .edit').show();
-    $('.edit-img').addClass('edit-img-1');
-    $('.edit-text').addClass('edit-text-1');
-    $('.u-arrow').hide();
-    $('body').append('<div class="edit-a-l" onclick="eidt_nextPage()"></div><div class="edit-a-r" onclick="edit_prePage()"></div>')
-    
-
-    $('.eidt-last-div').click(function() {
-      alert('调用新增一页的桥方法\n方法名称：editor_add_page');
-      invoke_app('editor_add_page',{});
-    });
-
-
+  $('.app-edit .edit').show();
+   $('.edit-img').addClass('edit-img-1');
+   $('.edit-text').addClass('edit-text-1');
   }
-
   });
 
 function app_edit(d) {
-
-  if(EditMode=='1'){
     
-      var _obj = h5data.filter(function(_x){return _x.id==d.id});
-      var _item=_obj[0];
-      var data4app= {
-      id:d.id,
-      type:d.type,
-      key:d.key,
-      value:eval('_item.'+d.key),
-      width:d.width,
-      height:d.height
-          //origin:_item
-      }
-      
-      //alert(JSON.stringify(data4app));
-      invoke_app('editor',data4app)
+    var _obj = h5data.filter(function(_x){return _x.id==d.id});
+    var _item=_obj[0];
+    var data4app= {
+    id:d.id,
+    type:d.type,
+    key:d.key,
+    value:eval('_item.'+d.key),
+    width:d.width,
+    height:d.height
+        //origin:_item
     }
+    
+    //alert(JSON.stringify(data4app));
+    invoke_app('editor',data4app)
 }
 
 

@@ -1,6 +1,3 @@
-/* version:1.0
-   author:1.0;
-; */
 * {
     margin: 0;
     outline: 0;
@@ -74,10 +71,6 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0;
     padding: 0;
     font-weight: normal;
-}
-
-.none{
-    display: none;
 }
 
 .clr:after {
@@ -1854,31 +1847,45 @@ h2{
             background-color: #fff;
         }
 
-
-
-
-
-.z-move1 {
-    -webkit-animation: myfirst1 1.5s ease-in-out;
-    -moz-animation: myfirst 1.5s ease-in-out;
-    animation: myfirst 1.5s ease-in-out;
+.app-edit {
 }
 
+    .app-edit .edit {
+        
+        
+    }
+
+    .app-edit .edit-text-1 {
+        border: 3px dashed red;
+        color:#FFF;
+        z-index: 9999;
+        padding: 10px;
+    }
+
+    .app-edit .edit-img-1 {
+        position:absolute;
+        right: 0px;
+        z-index: 9999;
+        padding: 10px;
+        background-image: url(../images/edit-img.png);
+        background-repeat:no-repeat;
+        background-size: cover;
+        height: 20px;
+        width: 20px;
+
+    }
+
 .z-move2 {
-    -webkit-animation: myfirst 0.5s ease-in-out;
-    -moz-animation: myfirst1 0.5s ease-in-out;
-    animation: myfirst1 0.5s ease-in-out;
+    -webkit-animation: move 0.5s ease-in-out;
+    -moz-animation: move 0.5s ease-in-out;
+    animation: move 0.5s ease-in-out;
     -webkit-animation-fill-mode: forwards;
 }
 
-.z-move3{
-     -webkit-animation: aaa1 1.5s ease-in-out;
-     -webkit-animation-fill-mode: forwards;
-}
-
-.z-move4{
-     -webkit-animation: aaa 0.5s ease-in-out;
-     -webkit-animation-fill-mode: forwards;
+.z-move1 {
+    -webkit-animation: move 1.5s ease-in-out;
+    -moz-animation: move 1.5s ease-in-out;
+    animation: move 1.5s ease-in-out;
 }
 
 .myflip{
@@ -1886,43 +1893,6 @@ h2{
     -moz-animation: flip 1.5s ease-in-out;
     animation: flip 1.5s ease-in-out;
 
-}
-
-@-webkit-keyframes myfirst /* Safari 和 Chrome */
-{
-    0%   { left:400px; top:0px;}
-   /* 25%  {background: yellow; left:200px; top:0px;}
-    50%  {background: blue; left:200px; top:0px;}
-    75%  {background: green; left:300px; top:0px;}*/
-    100% { left:0px; top:0px;}
-}
-
-@-webkit-keyframes myfirst1 /* Safari 和 Chrome */
-{
-    0%   { right:100px; top:0px;}
-   /* 25%  {background: yellow; right:200px; top:0px;}
-    50%  {background: blue; right:200px; top:0px;}
-    75%  {background: green; right:300px; top:0px;}*/
-    100% { right:400px; top:0px;}
-}
-
-
-@-webkit-keyframes aaa /* Safari 和 Chrome */
-{
-    0%   { left:0px; top:0px;}
-   /* 25%  {background: yellow; left:200px; top:0px;}
-    50%  {background: blue; left:200px; top:0px;}
-    75%  {background: green; left:300px; top:0px;}*/
-    100% { left:400px; top:0px;}
-}
-
-@-webkit-keyframes aaa1 /* Safari 和 Chrome */
-{
-    0%   { right:400px; top:0px;}
-   /* 25%  {background: yellow; right:200px; top:0px;}
-    50%  {background: blue; right:200px; top:0px;}
-    75%  {background: green; right:300px; top:0px;}*/
-    100% {right:0px; top:0px;}
 }
 
 @-webkit-keyframes flip {
@@ -1998,84 +1968,5 @@ h2{
         animation-timing-function: ease-in
     }
 }
-
-
-
-
-
-
-
-/* eidtor */
-
-
-.app-edit {
-}
-
-    .app-edit .edit {
-        
-        
-    }
-
-    .app-edit .edit-text-1 {
-        border: 3px dashed red;
-        color:#FFF;
-        z-index: 9999;
-        padding: 10px;
-    }
-
-    .app-edit .edit-img-1 {
-        position:absolute;
-        top: 5px;
-        right: 5px;
-        z-index: 9999;
-        padding: 10px;
-        background-image: url(../images/edit-img.png);
-        background-repeat:no-repeat;
-        background-size: cover;
-        height: 20px;
-        width: 20px;
-
-    }
-
-
-
-.edit-a-l{
-    z-index: 9999;
-    position: absolute;
-    left: 0;
-    top: 45%;
-    background-image: url(../images/edit-a-l.png);
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: left;
-    height: 50px;
-    width: 60px;
-    
-}
-
-.edit-a-r{
-    z-index: 9999;
-    position: absolute;
-    right: 0;
-    top: 45%;
-    background-image: url(../images/edit-a-r.png);
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: right;
-    height: 50px;
-    width: 60px;
-    
-
-}
-
-.eidt-last-div{
-    background-image: url(../images/edit-add.png); 
-    background-size: cover; 
-    background-position: 50% 50%;
-}
-
-
-
-
 
 

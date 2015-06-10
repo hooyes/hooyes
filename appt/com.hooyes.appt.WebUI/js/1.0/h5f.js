@@ -98,49 +98,10 @@ function prePage() {
         a += 1,
         moveDistanceY = a,
         scrollMove(),
-        a >= 21 && (clearInterval(b), scrollEnd3())
+        a >= 21 && (clearInterval(b), scrollEnd2())
     },
     1)
 }
-
-
-function nextPage() {
-    
-    var a = 0;
-    scrollStart();
-    var b = setInterval(function () {
-        a -= 1,
-        moveDistanceY = a,
-        scrollMove(),
-        -21 >= a && (clearInterval(b), scrollEnd2())
-    },
-    1)
-} 
-
-function edit_prePage(){
-    var a = 0;
-    scrollStart();
-    var b = setInterval(function () {
-        a += 21,
-        moveDistanceY = a,
-        scrollMove(),
-        a >= 21 && (clearInterval(b), scrollEnd3())
-    },
-    1)
-}
-
-function eidt_nextPage() {
-    
-    var a = 0;
-    scrollStart();
-    var b = setInterval(function () {
-        a -= 21,
-        moveDistanceY = a,
-        scrollMove(),
-        -21 >= a && (clearInterval(b), scrollEnd2())
-    },
-    1)
-} 
 
 function scrollEnd2() {
     activePage.style.transform = "translateY(0px)";
@@ -164,28 +125,18 @@ function scrollEnd2() {
 }
 
 
-function scrollEnd3() {
-    activePage.style.transform = "translateY(0px)";
-    activePage.style.webkitTransform = "translateY(0px)";
-    activePage.style.mozTransform = "translateY(0px)"
-    activePage.classList.add("z-move3");
-    currentPage.classList.add("z-move4");
-    setTimeout(function () {
-        activePage.classList.remove("z-active"),
-        activePage.classList.remove("z-move"),
-        activePage.classList.add("z-current"),
-        currentPage.classList.remove("z-current"),
-        currentPage.classList.remove("z-move"),
-        currentPage.classList.remove("z-move4"),
-        activePage.classList.remove("z-move3"),
-        theClass._isDisableFlipPage = !1,
-        theClass.$currentPage = $(activePage).trigger("current"),
-        $(currentPage).trigger("hide")
+function nextPage() {
+    
+    var a = 0;
+    scrollStart();
+    var b = setInterval(function () {
+        a -= 1,
+        moveDistanceY = a,
+        scrollMove(),
+        -21 >= a && (clearInterval(b), scrollEnd2())
     },
-        1500);
-}
-
-!
+    1)
+} !
 function (a) {
     "use strict";
     a.fn.swipeSlide = function (b, c) {
@@ -940,18 +891,6 @@ $.easing.jswing = $.easing.swing;
 
 
 $(function(){
-   var EditMode=$.Request("edit");
-   if(EditMode=='1'){
-        $('body').append('<script type="text/html" id="t_page_last_1x1"><section class="main-page"><div class="m-img"><div class="edit_wrapper eidt-last-div"></div></div></section></script>');
-
-        h5data.push(
-            {
-                "id":"Hello_Hooyes_Add_Page",
-                "tid":"t_page_last_1x1"
-              }
-          )
-   }
-
 
     for(var i=0;i<h5data.length;i++){
     	var spage= h5data[i];
