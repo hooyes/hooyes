@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="hooyes.net">
+    <meta name="author" content="hooyes">
+    <title>登录</title>
+    <style>
+    .hooyes-net-btn{
+	    height: 40px;
+	    min-width: 200px;
+	    background: #1abc9c;
+	    border: 1px solid #1abc9c;
+	    border-radius: 6px;
+	    color: #fff;
+	    font-size: 16px;
+	    margin-top: 10px;
+    }
+    .hooyes-net-input{
+	    height: 25px;
+	    min-width: 200px;
+	    line-height: 25px;
+	    border-radius: 6px;
+	    border: 2px solid #bdc3c7;
+    }
+    .form-signin{
+       text-align:center;
+    }
+    </style>
+  </head>
+  <body>
+     <div class="container">
+     
+      
+      
+        <form  class="form-signin" th:action="@{/login}" method="post">
+	       
+             <h2 class="form-signin-heading">请登录</h2>
+              <div th:if="${param.error}">
+	            用户名密码错误
+	        </div>
+	        <div th:if="${param.logout}">
+	            Bye
+	        </div>
+            <p><label> Username: <input class="hooyes-net-input" type="text" name="username"/> </label></p>
+            <p><label> Password: <input class="hooyes-net-input" type="password" name="password"/> </label></p>
+            <p><input class="hooyes-net-btn"  type="submit" value="登录"/></p>
+        </form>
+      
+</div>
+</body>
+</html>

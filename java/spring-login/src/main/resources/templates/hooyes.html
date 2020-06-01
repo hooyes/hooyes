@@ -1,0 +1,20 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="hooyes.net">
+    <meta name="author" content="hooyes">
+<title>Welcome</title>
+</head>
+<body>
+<div>
+您好，<h3 th:inline="text">Welcome [[${#httpServletRequest.remoteUser}]]</h3>
+<form th:action="@{/logout}" method="post">
+    <input type="submit" value="Logout" />
+</form>
+</div>
+</body>
+</html>
